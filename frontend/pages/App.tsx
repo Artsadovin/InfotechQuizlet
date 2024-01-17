@@ -1,5 +1,5 @@
 export function Application(){
     return (<div>
-        hi
+        hi + 1
     </div>)
 }
