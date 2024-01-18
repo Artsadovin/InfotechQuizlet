@@ -1085,7 +1085,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState(initialState) {
+          function useState3(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1093,11 +1093,11 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef(initialValue) {
+          function useRef3(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1879,15 +1879,15 @@
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
-          exports.useRef = useRef;
-          exports.useState = useState;
+          exports.useRef = useRef3;
+          exports.useState = useState3;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2434,7 +2434,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment = 7;
+          var Fragment2 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3590,7 +3590,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment:
+              case Fragment2:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -13261,7 +13261,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment) {
+              if (current2 === null || current2.tag !== Fragment2) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -13664,7 +13664,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment) {
+                    if (child.tag === Fragment2) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -17839,7 +17839,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment:
+              case Fragment2:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -18112,7 +18112,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment:
+              case Fragment2:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -22371,7 +22371,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment, elements, key, mode);
+            var fiber = createFiber(Fragment2, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -24376,11 +24376,11 @@
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx3 = jsxWithValidationDynamic;
-          var jsxs = jsxWithValidationStatic;
+          var jsx5 = jsxWithValidationDynamic;
+          var jsxs4 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx3;
-          exports.jsxs = jsxs;
+          exports.jsx = jsx5;
+          exports.jsxs = jsxs4;
         })();
       }
     }
@@ -24401,17 +24401,83 @@
   // frontend/index.tsx
   var import_client = __toESM(require_client());
 
-  // frontend/pages/App.tsx
+  // frontend/components/ClickCount/ClickCount.tsx
+  var import_react = __toESM(require_react());
   var import_jsx_runtime = __toESM(require_jsx_runtime());
+  var ClickCount = () => {
+    const [ClickCount2, SetCount] = (0, import_react.useState)(0);
+    const ref1 = (0, import_react.useRef)(null);
+    const [isSelect, setSelect] = (0, import_react.useState)(false);
+    function func() {
+      console.log(1);
+    }
+    (0, import_react.useEffect)(() => {
+      ref1.current.addEventListener("mousedown", func);
+      return () => {
+        ref1.current.removeEventListener("mousedown", func);
+      };
+    }, [ClickCount2]);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { ref: ref1, onClick: () => {
+        SetCount(ClickCount2 + 1);
+      }, children: [
+        "Clicked:",
+        ClickCount2
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { onClick: () => {
+        setSelect(!isSelect);
+      }, children: [
+        "hui : ",
+        isSelect ? "yes" : "no"
+      ] })
+    ] });
+  };
+
+  // frontend/components/button/Button.tsx
+  var import_react2 = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var Button = (props) => {
+    const button = { ...props };
+    const ref1 = (0, import_react2.useRef)(null);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { ref: ref1, className: "button", onClick: () => {
+      ref1.current.style.backgroundColor = "black";
+      button.OnClick();
+    }, children: button.text });
+  };
+
+  // frontend/components/hookTest/Menu.tsx
+  var import_react3 = __toESM(require_react());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var Menu = () => {
+    const [isOpened, setSelect] = (0, import_react3.useState)(false);
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { onClick: () => {
+        setSelect(!isOpened);
+      }, children: "ff" }),
+      isOpened && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { children: " csd" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { children: " csd" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { children: " csd" })
+      ] })
+    ] });
+  };
+
+  // frontend/pages/App.tsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   function Application() {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "hi" });
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button, { text: "pfuise", OnClick: () => {
+      } }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Menu, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ClickCount, {})
+    ] });
   }
 
   // frontend/index.tsx
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   var root = import_client.default.createRoot(document.querySelector("#application"));
   root.render(
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Application, {})
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Application, {})
   );
 })();
 /*! Bundled license information:
