@@ -2441,7 +2441,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment5 = 7;
+          var Fragment6 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3597,7 +3597,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment5:
+              case Fragment6:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -13268,7 +13268,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment5) {
+              if (current2 === null || current2.tag !== Fragment6) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -13671,7 +13671,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment5) {
+                    if (child.tag === Fragment6) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -17846,7 +17846,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment5:
+              case Fragment6:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -18119,7 +18119,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment5:
+              case Fragment6:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -22378,7 +22378,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment5, elements, key, mode);
+            var fiber = createFiber(Fragment6, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -24383,11 +24383,11 @@
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx9 = jsxWithValidationDynamic;
-          var jsxs5 = jsxWithValidationStatic;
+          var jsx10 = jsxWithValidationDynamic;
+          var jsxs6 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx9;
-          exports.jsxs = jsxs5;
+          exports.jsx = jsx10;
+          exports.jsxs = jsxs6;
         })();
       }
     }
@@ -24916,16 +24916,16 @@
 
   // dev/palette.jsx
   function ExampleLoaderComponent() {
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_react3.Fragment, { children: "Loading..." });
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_react3.Fragment, { children: "Loading..." });
   }
-  var import_react3, import_jsx_runtime6, PaletteTree;
+  var import_react3, import_jsx_runtime7, PaletteTree;
   var init_palette = __esm({
     "dev/palette.jsx"() {
       "use strict";
       import_react3 = __toESM(require_react());
       init_index_esm();
-      import_jsx_runtime6 = __toESM(require_jsx_runtime());
-      PaletteTree = () => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Palette, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Category, { name: "App", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Component2, { name: "Loader", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Variant, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ExampleLoaderComponent, {}) }) }) }) });
+      import_jsx_runtime7 = __toESM(require_jsx_runtime());
+      PaletteTree = () => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Palette, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Category, { name: "App", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Component2, { name: "Loader", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Variant, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(ExampleLoaderComponent, {}) }) }) }) });
     }
   });
 
@@ -24934,15 +24934,15 @@
   __export(previews_exports, {
     default: () => previews_default
   });
-  var import_jsx_runtime7, ComponentPreviews, previews_default;
+  var import_jsx_runtime8, ComponentPreviews, previews_default;
   var init_previews = __esm({
     "dev/previews.jsx"() {
       "use strict";
       init_index_esm();
       init_palette();
-      import_jsx_runtime7 = __toESM(require_jsx_runtime());
+      import_jsx_runtime8 = __toESM(require_jsx_runtime());
       ComponentPreviews = () => {
-        return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Previews, { palette: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(PaletteTree, {}) });
+        return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Previews, { palette: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(PaletteTree, {}) });
       };
       previews_default = ComponentPreviews;
     }
@@ -26962,10 +26962,19 @@
     return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
   }
 
-  // frontend/pages/App.tsx
+  // frontend/components/SignUpScreen/SignUpScreen.tsx
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var SignUpScreen = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_jsx_runtime5.Fragment, {});
+  };
+
+  // frontend/pages/App.tsx
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   function Application() {
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Routes, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Route, { path: "/login", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(LogScreen, {}) }) }) });
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(Routes, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Route, { path: "/login", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(LogScreen, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Route, { path: "/signup", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SignUpScreen, {}) })
+    ] }) });
   }
 
   // frontend/index.tsx
@@ -26988,15 +26997,15 @@
   var ComponentPreviews2 = import_react4.default.lazy(() => Promise.resolve().then(() => (init_previews(), previews_exports)));
 
   // frontend/index.tsx
-  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   var root = import_client.default.createRoot(document.querySelector("#application"));
   root.render(
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
       DevSupport,
       {
         ComponentPreviews: ComponentPreviews2,
         useInitialHook: useInitial,
-        children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Application, {})
+        children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Application, {})
       }
     )
   );
