@@ -1,6 +1,6 @@
 import logo from "./images/logo.svg"
 import styles from "./FormContainer.module.css"
-import {Form} from "../Form/Form.tsx";
+import {FormLogIn} from "../FormLogIn/FormLogIn.tsx";
 export const FormContainer = () => {
     return (
         <div className={styles.FormContainer}>
@@ -8,7 +8,7 @@ export const FormContainer = () => {
                 <img className={styles.logo} src={logo} alt={"картинка"}/>
             </div>
             <div className={styles.Form}>
-                <Form/>
+                <FormLogIn/>
             </div>
         </div>
     )

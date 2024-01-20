@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"github.com/gorilla/mux"
 )
 
 const (
@@ -10,12 +11,13 @@ const (
 )
 
 func main() {
-	mux := http.NewServeMux()
+	mux := mux.NewRouter()
+
 	mux.HandleFunc("/login", index)
-	mux.HandleFunc("/singup", index)
+	mux.HandleFunc("/signup", index)
 	// Реализуем отдачу статики
 
-	mux.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
+	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 
 	log.Println("Start server " + port)
 	err := http.ListenAndServe(port, mux)

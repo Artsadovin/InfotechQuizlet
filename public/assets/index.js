@@ -2441,7 +2441,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment6 = 7;
+          var Fragment4 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3597,7 +3597,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment6:
+              case Fragment4:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -13268,7 +13268,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment6) {
+              if (current2 === null || current2.tag !== Fragment4) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -13671,7 +13671,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment6) {
+                    if (child.tag === Fragment4) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -17846,7 +17846,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment6:
+              case Fragment4:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -18119,7 +18119,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment6:
+              case Fragment4:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -22378,7 +22378,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment6, elements, key, mode);
+            var fiber = createFiber(Fragment4, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -24384,10 +24384,10 @@
             }
           }
           var jsx10 = jsxWithValidationDynamic;
-          var jsxs6 = jsxWithValidationStatic;
+          var jsxs7 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
           exports.jsx = jsx10;
-          exports.jsxs = jsxs6;
+          exports.jsxs = jsxs7;
         })();
       }
     }
@@ -24990,29 +24990,29 @@
     logo: "FormContainer_logo"
   };
 
-  // frontend/components/Form/Form.module.css
-  var Form_default = {
-    Title: "Form_Title",
-    Form: "Form_Form",
-    LoginForm: "Form_LoginForm",
-    PasswordForm: "Form_PasswordForm",
-    ButtonsBlock: "Form_ButtonsBlock",
-    LogInButton: "Form_LogInButton",
-    SingUpButton: "Form_SingUpButton"
+  // frontend/components/FormLogIn/FormLogIn.module.css
+  var FormLogIn_default = {
+    Title: "FormLogIn_Title",
+    Form: "FormLogIn_Form",
+    LoginForm: "FormLogIn_LoginForm",
+    PasswordForm: "FormLogIn_PasswordForm",
+    ButtonsBlock: "FormLogIn_ButtonsBlock",
+    LogInButton: "FormLogIn_LogInButton",
+    SingUpButton: "FormLogIn_SingUpButton"
   };
 
-  // frontend/components/Form/Form.tsx
+  // frontend/components/FormLogIn/FormLogIn.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
-  var Form = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("form", { className: Form_default.Form, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: Form_default.Title, children: "Log In" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: Form_default.LoginForm, placeholder: "Login", type: "text" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: Form_default.PasswordForm, placeholder: "Password", type: "password" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: Form_default.ButtonsBlock, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: Form_default.LogInButton, children: "Log in" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: Form_default.SingUpButton, children: "Sing up" })
+  var FormLogIn = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("form", { className: FormLogIn_default.Form, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { className: FormLogIn_default.Title, children: "Log In" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.LoginForm, placeholder: "Login", type: "text" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.PasswordForm, placeholder: "Password", type: "password" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: FormLogIn_default.ButtonsBlock, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.LogInButton, value: "Log In", type: "submit" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: FormLogIn_default.SingUpButton, children: "Sing up" })
       ] })
-    ] }) });
+    ] });
   };
 
   // frontend/components/FormContainer/FormContainer.tsx
@@ -25020,7 +25020,7 @@
   var FormContainer = () => {
     return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: FormContainer_default.FormContainer, children: [
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: FormContainer_default.LogoBar, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("img", { className: FormContainer_default.logo, src: logo_default, alt: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: FormContainer_default.Form, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Form, {}) })
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: FormContainer_default.Form, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(FormLogIn, {}) })
     ] });
   };
 
@@ -26648,7 +26648,7 @@
   if (true) {
     NavLink.displayName = "NavLink";
   }
-  var Form2 = /* @__PURE__ */ React2.forwardRef((_ref9, forwardedRef) => {
+  var Form = /* @__PURE__ */ React2.forwardRef((_ref9, forwardedRef) => {
     let {
       fetcherKey,
       navigate,
@@ -26693,7 +26693,7 @@
     }, props));
   });
   if (true) {
-    Form2.displayName = "Form";
+    Form.displayName = "Form";
   }
   function ScrollRestoration(_ref10) {
     let {
@@ -26962,10 +26962,18 @@
     return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
   }
 
+  // frontend/components/SignUpScreen/SignUpScreen.module.css
+  var SignUpScreen_default = {
+    SignUpScreen: "SignUpScreen_SignUpScreen"
+  };
+
   // frontend/components/SignUpScreen/SignUpScreen.tsx
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   var SignUpScreen = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_jsx_runtime5.Fragment, {});
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: SignUpScreen_default.SignUpScreen, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TitleContainer, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(FormContainer, {})
+    ] });
   };
 
   // frontend/pages/App.tsx

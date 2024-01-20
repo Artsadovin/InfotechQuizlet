@@ -2,6 +2,7 @@ import {LogScreen} from "../components/LogScreen/LogScreen.tsx";
 import {Route, Routes} from "react-router-dom";
 import {BrowserRouter} from "react-router-dom";
 import {SignUpScreen} from "../components/SignUpScreen/SignUpScreen.tsx";
+import React from "react";
 export function Application(){
     return (
         <BrowserRouter>
