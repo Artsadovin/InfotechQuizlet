@@ -1,0 +1,172 @@
+/* frontend/components/LogScreen/LogScreen.module.css */
+.LogScreen_LogScreen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #327F79;
+}
+
+/* frontend/components/TitleContainer/TitleContainer.module.css */
+.TitleContainer_TitleContainer {
+  width: 100%;
+  max-width: 58.2%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.TitleContainer_img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+.TitleContainer_Header {
+  display: block;
+  color: #327F79;
+  margin-bottom: 48px;
+  margin-top: 108px;
+  text-align: center;
+  font-family: Pribambas;
+  font-size: 133.333px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.667px;
+}
+
+/* frontend/components/FormContainer/FormContainer.module.css */
+.FormContainer_FormContainer {
+  background-color: #327F79;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 42.8%;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+}
+.FormContainer_Form {
+  margin-top: 200px;
+}
+.FormContainer_LogoBar {
+  width: 100%;
+  display: flex;
+  margin-right: 170px;
+  justify-content: flex-end;
+}
+.FormContainer_logo {
+  max-width: 130px;
+  max-height: 100px;
+  margin-top: 50px;
+  justify-self: right;
+}
+
+/* frontend/components/Form/Form.module.css */
+.Form_Title {
+  color: #FFF;
+  text-align: center;
+  font-family: "Euclid Circular B";
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.6px;
+}
+.Form_Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Form_LoginForm {
+  opacity: 1;
+  border-radius: 40px;
+  border: 4px solid #FFF;
+  width: 600px;
+  background: transparent;
+  height: 66.667px;
+  color: #FFF;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
+.Form_LoginForm::placeholder {
+  color: #FFF;
+  padding: 20px;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
+.Form_PasswordForm {
+  opacity: 1;
+  border-radius: 40px;
+  border: 4px solid #FFF;
+  width: 600px;
+  background: transparent;
+  height: 66.667px;
+  color: #FFF;
+  margin-top: 10px;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
+.Form_PasswordForm::placeholder {
+  color: #FFF;
+  padding: 20px;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
+.Form_ButtonsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.Form_LogInButton {
+  margin-top: 10px;
+  border-radius: 40px;
+  background: #FFF;
+  width: 200px;
+  height: 66.667px;
+  color: #327F79;
+  border: none;
+  text-align: center;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
+.Form_SingUpButton {
+  opacity: 1;
+  background: transparent;
+  width: 200px;
+  height: 66.667px;
+  border-radius: 40px;
+  border: 4px solid #FFF;
+  color: #FFF;
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Euclid Circular B";
+  font-size: 26.667px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.267px;
+}
