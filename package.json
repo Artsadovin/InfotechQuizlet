@@ -1,10 +1,12 @@
 {
-  "scripts":{
+  "scripts": {
     "dev": "node esbuild.js",
     "watch": "node esbuildWatcher.js"
   },
   "dependencies": {
-    "esbuild": "^0.19.11"
+    "@react-buddy/ide-toolbox": "^2.4.0",
+    "esbuild": "^0.19.11",
+    "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.46",

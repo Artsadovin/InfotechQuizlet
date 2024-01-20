@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": "./frontend",
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
@@ -18,4 +19,6 @@
         "jsx": "react-jsx"
     },
     //"include": ["frontend"]
+    "include": ["frontend", "./declaration.d.ts"],
+    "exclude": ["node_modules"]
 }

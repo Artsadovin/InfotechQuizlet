@@ -11,7 +11,8 @@ const (
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/home", index)
+	mux.HandleFunc("/login", index)
+	mux.HandleFunc("/singup", index)
 	// Реализуем отдачу статики
 
 	mux.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
