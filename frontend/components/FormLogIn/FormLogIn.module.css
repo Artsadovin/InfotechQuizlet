@@ -1,0 +1,120 @@
+.Title{
+    color: #FFF;
+
+    text-align: center;
+    font-family: "Euclid Circular B";
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    margin: 0;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+}
+
+.LoginForm{
+    opacity: 1;
+    outline: none;
+    border-radius: 40px;
+    border: 4px solid #FFF;
+    width: 600px;
+    background: transparent;
+    height: 66.667px;
+    color: #FFF;
+
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+    padding-left: 20px;
+}
+.LoginForm::placeholder{
+    color: #FFF;
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+}
+
+.PasswordForm{
+    outline: none;
+    opacity: 1;
+    border-radius: 40px;
+    border: 4px solid #FFF;
+    width: 600px;
+    background: transparent;
+    height: 66.667px;
+    color: #FFF;
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+    padding-left: 20px;
+}
+
+.PasswordForm::placeholder{
+    color: #FFF;
+    outline: none;
+
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+}
+
+.ButtonsBlock{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.LogInButton{
+    margin-top: 10px;
+    border-radius: 40px;
+    background: #FFF;
+    width: 200px;
+    height: 66.667px;
+    color: #327F79;
+    border: none;
+    text-align: center;
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+}
+
+.SingUpButton{
+    opacity: 1;
+    background: transparent;
+    width: 200px;
+    height: 66.667px;
+    border-radius: 40px;
+    border: 4px solid #FFF;
+    color: #FFF;
+    margin-top: 10px;
+
+    text-align: center;
+    font-family: "Euclid Circular B";
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.267px;
+}
