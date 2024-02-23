@@ -17,12 +17,16 @@ const (
 
 func main() {
 
-	db, err := openDB()
-	mux.HandleFunc("/home", index)
+	db, err := OpenDB()
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	dbx := sqlx.NewDb(db, dbDriverName)
 
 	mux := mux.NewRouter()
+
+	mux.HandleFunc("/home", index(dbx))
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	log.Println("Start server " + port)
