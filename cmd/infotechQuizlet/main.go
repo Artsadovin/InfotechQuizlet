@@ -26,7 +26,7 @@ func main() {
 
 	mux := mux.NewRouter()
 
-	mux.HandleFunc("/home", index(dbx))
+	mux.HandleFunc("/login", index(dbx))
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	log.Println("Start server " + port)
