@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd8b7eaf-342d-4efc-bc61-7d7e495cab06" name="Changes" comment="Добавил страницу регистрации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/infotechQuizlet/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/infotechQuizlet/handlers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
