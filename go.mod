@@ -1,4 +1,4 @@
-module InfotechQuizlet
+module infotechQuizlet
 
 go 1.21.5
 

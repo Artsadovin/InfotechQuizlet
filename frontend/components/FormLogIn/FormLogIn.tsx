@@ -3,7 +3,7 @@ import styles from "./FormLogIn.module.css"
 
 export const FormLogIn = () => {
     return(
-        <form className={styles.Form}>
+        <form className={styles.Form} method={"post"}>
             <h2 className={styles.Title}>Log In</h2>
             <input className={styles.LoginForm} placeholder={"Login"} type={"text"}/>
             <input className={styles.PasswordForm} placeholder={"Password"} type={"password"}/>
