@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/jmoiron/sqlx"
 	"html/template"
 	"log"
@@ -8,6 +9,11 @@ import (
 )
 
 type indexPage struct {
+}
+
+type loginData struct {
+	login    string
+	password string
 }
 
 func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
@@ -27,5 +33,37 @@ func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			log.Println(err.Error())
 			return
 		}
+	}
+}
+
+func postRequest(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		//if r.Method != "POST" {
+		//	http.Redirect(w, r, "/login", http.StatusSeeOther)
+		//	return
+		//}
+
+		login := r.FormValue("login")
+		password := r.FormValue("password")
+		fmt.Println(login)
+		fmt.Println(password)
+
+		/*data := loginData{
+			login:    login,
+			password: password,
+		} */
+
+		row := dbx.QueryRow("SELECT * FROM user WHERE nickname=? AND password=?", login, password)
+		var id int
+		var nickname string
+		var p string
+		var avatar_id int
+		err := row.Scan(&id, &nickname, &p, &avatar_id)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(nickname)
+		fmt.Println(p)
+		return
 	}
 }

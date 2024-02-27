@@ -22,11 +22,29 @@ func main() {
 		log.Fatal(err)
 	}
 
+	err = db.Ping()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	dbx := sqlx.NewDb(db, dbDriverName)
+	/*
+		row := db.QueryRow("SELECT * FROM user WHERE nickname=?", "oneeyeking")
+		var id int
+		var nickname string
+		var password string
+		var avatar_id int
+		err = row.Scan(&id, &nickname, &password, &avatar_id)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(nickname)
+	*/
 
 	mux := mux.NewRouter()
 
 	mux.HandleFunc("/login", index(dbx))
+	mux.HandleFunc("/post_request", postRequest(dbx))
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	log.Println("Start server " + port)
@@ -37,5 +55,5 @@ func main() {
 }
 
 func OpenDB() (*sql.DB, error) {
-	return sql.Open(dbDriverName, "root:Sadovin512(localhost:3306)/Quizlet?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
+	return sql.Open(dbDriverName, "root:Sadovin512@tcp(localhost:3306)/infotech_quizlet?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
 }
