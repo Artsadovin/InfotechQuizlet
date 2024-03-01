@@ -1092,7 +1092,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState5(initialState) {
+          function useState7(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1100,7 +1100,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef3(initialValue) {
+          function useRef5(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
@@ -1893,8 +1893,8 @@
           exports.useLayoutEffect = useLayoutEffect4;
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
-          exports.useRef = useRef3;
-          exports.useState = useState5;
+          exports.useRef = useRef5;
+          exports.useState = useState7;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -24383,11 +24383,11 @@
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx10 = jsxWithValidationDynamic;
-          var jsxs7 = jsxWithValidationStatic;
+          var jsx15 = jsxWithValidationDynamic;
+          var jsxs10 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx10;
-          exports.jsxs = jsxs7;
+          exports.jsx = jsx15;
+          exports.jsxs = jsxs10;
         })();
       }
     }
@@ -24477,13 +24477,13 @@
     window.dispatchEvent(urlChangeEvent);
   }
   function getTransformedCategoryChildren({ children, categoryName }) {
-    return import_react.default.Children.map(children, (child) => {
-      return import_react.default.cloneElement(child, { categoryName });
+    return import_react3.default.Children.map(children, (child) => {
+      return import_react3.default.cloneElement(child, { categoryName });
     });
   }
   function getTransformedComponentChildren({ children, componentName, categoryName }) {
-    return import_react.default.Children.map(children, (child) => {
-      return import_react.default.cloneElement(child, {
+    return import_react3.default.Children.map(children, (child) => {
+      return import_react3.default.cloneElement(child, {
         categoryName,
         componentName
       });
@@ -24509,10 +24509,10 @@
     curNode.classList.remove(styles.fullWindow);
     removeFullWindowClassFromParents(curNode.parentElement);
   }
-  var import_react, _a, envDevmode, windowDevmode, DEV_MODE, withInitialHook, DevBootstrap, DevSupport, css_248z$9, TableHeader, PropsControlTypes, Input, Checkbox, Select, css_248z$8, Radio, Textarea, css_248z$7, JsonEditor, TableItemControl, css_248z$6, TableItem, css_248z$5, TableItems, css_248z$4, PropsEditTable, css_248z$3, ToolsPanel, PALETTE_PATH, URL_CHANGE_EVENT, useRoute, css_248z$2, styles$2, Previews, css_248z$1, styles$1, ReactBuddyErrorBoundary, Palette, CategoryContext, useCategoryContext, Category, ComponentContext, useComponentContext, Component2, css_248z, styles, DEFAULT_VARIANT_NAME, VariantRoute, VariantContext, useVariantContext, Variant;
+  var import_react3, _a, envDevmode, windowDevmode, DEV_MODE, withInitialHook, DevBootstrap, DevSupport, css_248z$9, TableHeader, PropsControlTypes, Input, Checkbox, Select, css_248z$8, Radio, Textarea, css_248z$7, JsonEditor, TableItemControl, css_248z$6, TableItem, css_248z$5, TableItems, css_248z$4, PropsEditTable, css_248z$3, ToolsPanel, PALETTE_PATH, URL_CHANGE_EVENT, useRoute, css_248z$2, styles$2, Previews, css_248z$1, styles$1, ReactBuddyErrorBoundary, Palette, CategoryContext, useCategoryContext, Category, ComponentContext, useComponentContext, Component2, css_248z, styles, DEFAULT_VARIANT_NAME, VariantRoute, VariantContext, useVariantContext, Variant;
   var init_index_esm = __esm({
     "node_modules/@react-buddy/ide-toolbox/dist/index.esm.js"() {
-      import_react = __toESM(require_react());
+      import_react3 = __toESM(require_react());
       envDevmode = typeof process !== "undefined" ? ((_a = process.env) === null || _a === void 0 ? void 0 : _a.REACT_APP_IDE_DEVMODE) === "true" : false;
       windowDevmode = typeof window !== "undefined" && (window === null || window === void 0 ? void 0 : window.REACT_BUDDY_IDE_DEVMODE) === true;
       DEV_MODE = windowDevmode || envDevmode;
@@ -24520,37 +24520,37 @@
         const DevBootstrapWrapped = () => {
           const status = useInitialHook();
           if (status.loading) {
-            return import_react.default.createElement("div", null, " loading... ");
+            return import_react3.default.createElement("div", null, " loading... ");
           }
           if (status.error) {
-            return import_react.default.createElement("div", null, "Unable to bootstrap dev mode. Probably you need to run backend or enable backend mocking mode.");
+            return import_react3.default.createElement("div", null, "Unable to bootstrap dev mode. Probably you need to run backend or enable backend mocking mode.");
           }
-          return import_react.default.createElement(DevBootstrap, { ComponentPreviews: ComponentPreviews3 });
+          return import_react3.default.createElement(DevBootstrap, { ComponentPreviews: ComponentPreviews3 });
         };
         return DevBootstrapWrapped;
       };
       DevBootstrap = ({ ComponentPreviews: ComponentPreviews3 }) => {
-        return import_react.default.createElement(
-          import_react.Suspense,
-          { fallback: import_react.default.createElement("div", null, "Loading sources...") },
-          import_react.default.createElement(ComponentPreviews3, null)
+        return import_react3.default.createElement(
+          import_react3.Suspense,
+          { fallback: import_react3.default.createElement("div", null, "Loading sources...") },
+          import_react3.default.createElement(ComponentPreviews3, null)
         );
       };
       DevSupport = ({ children, ComponentPreviews: ComponentPreviews3, useInitialHook, devmode }) => {
         const isDevmode = enabledDevmode(devmode);
         if (isDevmode) {
-          return useInitialHook ? withInitialHook(useInitialHook, ComponentPreviews3)({}) : import_react.default.createElement(DevBootstrap, { ComponentPreviews: ComponentPreviews3 });
+          return useInitialHook ? withInitialHook(useInitialHook, ComponentPreviews3)({}) : import_react3.default.createElement(DevBootstrap, { ComponentPreviews: ComponentPreviews3 });
         }
-        return import_react.default.createElement(import_react.default.Fragment, null, children);
+        return import_react3.default.createElement(import_react3.default.Fragment, null, children);
       };
       css_248z$9 = '.table-header {\n  border-color: #363636;\n  border-width: 1px 0;\n  border-style: solid;\n  font-weight: 800;\n  padding: 10px 20px 10px 10px;\n  display: flex;\n}\n.table-header:after {\n  content: "";\n}\n.table-header .table-header-item {\n  flex-basis: 22%;\n  color: #444;\n}\n.table-header .table-header-item-control {\n  flex-basis: 78%;\n  color: #444;\n}';
       styleInject(css_248z$9);
       TableHeader = () => {
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: "table-header" },
-          import_react.default.createElement("div", { className: "table-header-item" }, "Property name"),
-          import_react.default.createElement("div", { className: "table-header-item-control" }, "Edit")
+          import_react3.default.createElement("div", { className: "table-header-item" }, "Property name"),
+          import_react3.default.createElement("div", { className: "table-header-item-control" }, "Edit")
         );
       };
       (function(PropsControlTypes2) {
@@ -24563,98 +24563,98 @@
       })(PropsControlTypes || (PropsControlTypes = {}));
       Input = (_a2) => {
         var { value } = _a2, restProps = __rest(_a2, ["value"]);
-        return import_react.default.createElement("input", Object.assign({}, restProps, { value: value !== null && value !== void 0 ? value : "", type: "text" }));
+        return import_react3.default.createElement("input", Object.assign({}, restProps, { value: value !== null && value !== void 0 ? value : "", type: "text" }));
       };
       Checkbox = (_a2) => {
         var { checked, className } = _a2, restProps = __rest(_a2, ["checked", "className"]);
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className },
-          import_react.default.createElement("input", Object.assign({}, restProps, { checked: checked !== null && checked !== void 0 ? checked : false, type: "checkbox" }))
+          import_react3.default.createElement("input", Object.assign({}, restProps, { checked: checked !== null && checked !== void 0 ? checked : false, type: "checkbox" }))
         );
       };
       Select = (_a2) => {
         var { optionsData } = _a2, restProps = __rest(_a2, ["optionsData"]);
-        return import_react.default.createElement("select", Object.assign({}, restProps), optionsData === null || optionsData === void 0 ? void 0 : optionsData.map((value) => {
-          return import_react.default.createElement("option", { value, key: value }, value);
+        return import_react3.default.createElement("select", Object.assign({}, restProps), optionsData === null || optionsData === void 0 ? void 0 : optionsData.map((value) => {
+          return import_react3.default.createElement("option", { value, key: value }, value);
         }));
       };
       css_248z$8 = ".radio-control {\n  display: flex;\n  align-items: center;\n  margin-right: 15px;\n}\n.radio-control label {\n  margin-right: 5px;\n}";
       styleInject(css_248z$8);
       Radio = (_a2) => {
         var { className, radioData, extValue } = _a2, restProps = __rest(_a2, ["className", "radioData", "extValue"]);
-        return radioData ? import_react.default.createElement("div", { className }, radioData.map((value) => {
-          return import_react.default.createElement(
+        return radioData ? import_react3.default.createElement("div", { className }, radioData.map((value) => {
+          return import_react3.default.createElement(
             "div",
             { key: value, className: "radio-control" },
-            import_react.default.createElement(
+            import_react3.default.createElement(
               "label",
               { htmlFor: String(value) },
               " ",
               value
             ),
-            import_react.default.createElement("input", Object.assign({}, restProps, { type: "radio", checked: extValue == value, id: String(value), value }))
+            import_react3.default.createElement("input", Object.assign({}, restProps, { type: "radio", checked: extValue == value, id: String(value), value }))
           );
         })) : null;
       };
       Textarea = (props) => {
-        return import_react.default.createElement("textarea", Object.assign({}, props));
+        return import_react3.default.createElement("textarea", Object.assign({}, props));
       };
       css_248z$7 = ".json-editor {\n  flex-direction: column;\n}\n.json-editor .json-editor-textarea {\n  align-self: start;\n  width: 100%;\n  min-height: 100px;\n  margin: 0 0 10px 0;\n}\n.json-editor .json-editor-apply-button {\n  align-self: start;\n}";
       styleInject(css_248z$7);
       JsonEditor = ({ className, propName, propValue, propUpdate }) => {
-        const [editedJsonValue, setEditedJsonValue] = (0, import_react.useState)();
-        const textareaOnChange = (0, import_react.useCallback)((event) => {
+        const [editedJsonValue, setEditedJsonValue] = (0, import_react3.useState)();
+        const textareaOnChange = (0, import_react3.useCallback)((event) => {
           const { currentTarget: { value } } = event;
           setEditedJsonValue(value);
         }, []);
-        const isEnabledToApply = (0, import_react.useMemo)(() => {
+        const isEnabledToApply = (0, import_react3.useMemo)(() => {
           return editedJsonValue == null;
         }, [editedJsonValue]);
-        const onPropUpdate = (0, import_react.useCallback)(() => {
+        const onPropUpdate = (0, import_react3.useCallback)(() => {
           propUpdate(propName, editedJsonValue);
           setEditedJsonValue(void 0);
         }, [propName, editedJsonValue]);
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: className + " json-editor" },
-          import_react.default.createElement(Textarea, { className: "json-editor-textarea", onChange: textareaOnChange, id: propName, value: editedJsonValue !== null && editedJsonValue !== void 0 ? editedJsonValue : propValue }),
-          import_react.default.createElement("button", { className: "json-editor-apply-button", disabled: isEnabledToApply, onClick: onPropUpdate }, "Apply changes")
+          import_react3.default.createElement(Textarea, { className: "json-editor-textarea", onChange: textareaOnChange, id: propName, value: editedJsonValue !== null && editedJsonValue !== void 0 ? editedJsonValue : propValue }),
+          import_react3.default.createElement("button", { className: "json-editor-apply-button", disabled: isEnabledToApply, onClick: onPropUpdate }, "Apply changes")
         );
       };
       TableItemControl = ({ controlType, data, propName, propValue, onPropChange }) => {
         switch (controlType) {
           case PropsControlTypes.Input:
-            return import_react.default.createElement(Input, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
+            return import_react3.default.createElement(Input, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
           case PropsControlTypes.Textarea:
-            return import_react.default.createElement(Textarea, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
+            return import_react3.default.createElement(Textarea, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
           case PropsControlTypes.Select:
-            return import_react.default.createElement(Select, { className: "table-item-control", id: propName, onChange: onPropChange, optionsData: data });
+            return import_react3.default.createElement(Select, { className: "table-item-control", id: propName, onChange: onPropChange, optionsData: data });
           case PropsControlTypes.Checkbox:
-            return import_react.default.createElement(Checkbox, { checked: propValue, id: propName, onChange: onPropChange });
+            return import_react3.default.createElement(Checkbox, { checked: propValue, id: propName, onChange: onPropChange });
           case PropsControlTypes.Radio:
-            return import_react.default.createElement(Radio, { className: "table-item-control", extValue: propValue, name: propName, onChange: onPropChange, radioData: data });
+            return import_react3.default.createElement(Radio, { className: "table-item-control", extValue: propValue, name: propName, onChange: onPropChange, radioData: data });
           case PropsControlTypes.JsonEditor:
-            return import_react.default.createElement(JsonEditor, { className: "table-item-control", propValue, propName, propUpdate: onPropChange });
+            return import_react3.default.createElement(JsonEditor, { className: "table-item-control", propValue, propName, propUpdate: onPropChange });
           default:
-            return import_react.default.createElement(Input, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
+            return import_react3.default.createElement(Input, { className: "table-item-control", id: propName, value: propValue, onChange: onPropChange });
         }
       };
       css_248z$6 = '.table-item-wrapper {\n  border-color: #363636;\n  border-width: 0 0 1px 0;\n  border-style: solid;\n  padding: 10px;\n  display: flex;\n}\n.table-item-wrapper:after {\n  content: "";\n}\n.table-item-wrapper .table-item,\n.table-item-wrapper .table-item-control {\n  display: flex;\n  align-items: center;\n  justify-content: start;\n}\n.table-item-wrapper .table-item {\n  flex-basis: 22%;\n}\n.table-item-wrapper .table-item-control {\n  flex-basis: 78%;\n}';
       styleInject(css_248z$6);
       TableItem = ({ propName, propValue, onPropChange, controlType, data }) => {
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: "table-item-wrapper" },
-          import_react.default.createElement("div", { className: "table-item" }, propName),
-          import_react.default.createElement(TableItemControl, { data, controlType, propName, propValue, onPropChange })
+          import_react3.default.createElement("div", { className: "table-item" }, propName),
+          import_react3.default.createElement(TableItemControl, { data, controlType, propName, propValue, onPropChange })
         );
       };
       css_248z$5 = '.table-items {\n  background-color: whitesmoke;\n  display: flex;\n  flex-direction: column;\n  overflow-y: scroll;\n}\n.table-items:after {\n  content: "";\n}';
       styleInject(css_248z$5);
       TableItems = ({ toolsPropsToEdit }) => {
         const { props = null, initialProps = null, propsEditInfo = null, updateProps } = Object.assign({}, toolsPropsToEdit);
-        (0, import_react.useEffect)(() => {
+        (0, import_react3.useEffect)(() => {
           let propsValuesFromData = {};
           propsEditInfo ? Object.entries(propsEditInfo).map(([propName, propEditInfo]) => {
             const propValue = Array.isArray(propEditInfo.data) ? propEditInfo.data[0] : propEditInfo.data;
@@ -24662,32 +24662,32 @@
           }) : null;
           updateProps === null || updateProps === void 0 ? void 0 : updateProps(Object.assign(Object.assign({}, props), propsValuesFromData));
         }, [propsEditInfo]);
-        const onInputChange = (0, import_react.useCallback)((event) => {
+        const onInputChange = (0, import_react3.useCallback)((event) => {
           const { value: updatedPropValue, id: propName } = event.currentTarget;
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const onCheckboxChange = (0, import_react.useCallback)((event) => {
+        const onCheckboxChange = (0, import_react3.useCallback)((event) => {
           const { checked: updatedPropValue, id: propName } = event.currentTarget;
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const onSelectChange = (0, import_react.useCallback)((event) => {
+        const onSelectChange = (0, import_react3.useCallback)((event) => {
           const { value: updatedPropValue, id: propName } = event.currentTarget;
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const onRadioChange = (0, import_react.useCallback)((event) => {
+        const onRadioChange = (0, import_react3.useCallback)((event) => {
           const { value: updatedPropValue, name: propName } = event.currentTarget;
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const onTextAreaChange = (0, import_react.useCallback)((event) => {
+        const onTextAreaChange = (0, import_react3.useCallback)((event) => {
           const { value: updatedPropValue, id: propName } = event.currentTarget;
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const onJsonChange = (0, import_react.useCallback)((propName, propValue) => {
+        const onJsonChange = (0, import_react3.useCallback)((propName, propValue) => {
           let updatedPropValue;
           try {
             updatedPropValue = JSON.parse(propValue);
@@ -24698,7 +24698,7 @@
           const updatedProps = Object.assign(Object.assign({}, props), { [propName]: updatedPropValue });
           updateProps(updatedProps);
         }, [props]);
-        const getChangeHendler = (0, import_react.useCallback)((controlType) => {
+        const getChangeHendler = (0, import_react3.useCallback)((controlType) => {
           switch (controlType) {
             case PropsControlTypes.Input:
               return onInputChange;
@@ -24716,54 +24716,54 @@
               return onInputChange;
           }
         }, [props]);
-        const renderTableItems = (0, import_react.useCallback)(() => {
+        const renderTableItems = (0, import_react3.useCallback)(() => {
           let items = [];
           const itemsWithoutInfo = props && Object.entries(props).filter(([propName]) => {
             return !(propsEditInfo === null || propsEditInfo === void 0 ? void 0 : propsEditInfo.hasOwnProperty(propName));
           }).map(([propName, propValue]) => {
-            return import_react.default.createElement(TableItem, { key: propName, propName, propValue, initialPropValue: initialProps === null || initialProps === void 0 ? void 0 : initialProps[propName], onPropChange: getChangeHendler() });
+            return import_react3.default.createElement(TableItem, { key: propName, propName, propValue, initialPropValue: initialProps === null || initialProps === void 0 ? void 0 : initialProps[propName], onPropChange: getChangeHendler() });
           });
           items = itemsWithoutInfo ? [...items, ...itemsWithoutInfo] : items;
           const itemsWithInfo = propsEditInfo && Object.entries(propsEditInfo).map(([propName, propInfo]) => {
-            return import_react.default.createElement(TableItem, { key: propName, data: propInfo.data, controlType: propInfo.controlType, propName, propValue: propInfo.controlType === PropsControlTypes.JsonEditor ? JSON.stringify(props === null || props === void 0 ? void 0 : props[propName], null, 2) : props === null || props === void 0 ? void 0 : props[propName], initialPropValue: initialProps === null || initialProps === void 0 ? void 0 : initialProps[propName], onPropChange: getChangeHendler(propInfo.controlType) });
+            return import_react3.default.createElement(TableItem, { key: propName, data: propInfo.data, controlType: propInfo.controlType, propName, propValue: propInfo.controlType === PropsControlTypes.JsonEditor ? JSON.stringify(props === null || props === void 0 ? void 0 : props[propName], null, 2) : props === null || props === void 0 ? void 0 : props[propName], initialPropValue: initialProps === null || initialProps === void 0 ? void 0 : initialProps[propName], onPropChange: getChangeHendler(propInfo.controlType) });
           });
           items = itemsWithInfo ? [...items, ...itemsWithInfo] : items;
           return items;
         }, [props, propsEditInfo]);
-        return import_react.default.createElement("div", { className: "table-items" }, renderTableItems());
+        return import_react3.default.createElement("div", { className: "table-items" }, renderTableItems());
       };
       css_248z$4 = ".props-edit-table {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n}";
       styleInject(css_248z$4);
       PropsEditTable = ({ toolsPropsToEdit }) => {
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: "props-edit-table" },
-          import_react.default.createElement(TableHeader, null),
-          import_react.default.createElement(TableItems, { toolsPropsToEdit })
+          import_react3.default.createElement(TableHeader, null),
+          import_react3.default.createElement(TableItems, { toolsPropsToEdit })
         );
       };
       css_248z$3 = ".tools-panel {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  background-color: #eeeeee;\n}\n.tools-panel .empty-props-message {\n  color: red;\n}";
       styleInject(css_248z$3);
       ToolsPanel = ({ toolsPropsToEdit }) => {
         const { props = null, propsEditInfo = null } = Object.assign({}, toolsPropsToEdit);
-        const renederToolsPanelContent = (0, import_react.useCallback)(() => {
+        const renederToolsPanelContent = (0, import_react3.useCallback)(() => {
           let hasPropetiesToEdit;
           hasPropetiesToEdit = props ? Object.keys(props).length > 0 : false;
           hasPropetiesToEdit = hasPropetiesToEdit || (propsEditInfo ? Object.keys(propsEditInfo).length > 0 : false);
-          return hasPropetiesToEdit ? import_react.default.createElement(PropsEditTable, { toolsPropsToEdit }) : import_react.default.createElement("div", { className: "empty-props-message" }, "This component has no properties to edit");
+          return hasPropetiesToEdit ? import_react3.default.createElement(PropsEditTable, { toolsPropsToEdit }) : import_react3.default.createElement("div", { className: "empty-props-message" }, "This component has no properties to edit");
         }, [props, propsEditInfo]);
-        return import_react.default.createElement("div", { className: "tools-panel" }, renederToolsPanelContent());
+        return import_react3.default.createElement("div", { className: "tools-panel" }, renederToolsPanelContent());
       };
       PALETTE_PATH = "/REACT_BUDDY_PALETTE";
       URL_CHANGE_EVENT = "urlchange";
       useRoute = (path, exact) => {
-        const [, setUpdate] = (0, import_react.useState)(false);
-        const update = (0, import_react.useCallback)(() => {
+        const [, setUpdate] = (0, import_react3.useState)(false);
+        const update = (0, import_react3.useCallback)(() => {
           setUpdate((reRender) => {
             return !reRender;
           });
         }, []);
-        (0, import_react.useEffect)(() => {
+        (0, import_react3.useEffect)(() => {
           window.addEventListener(URL_CHANGE_EVENT, update);
           window.addEventListener("popstate", update);
           return () => {
@@ -24777,18 +24777,18 @@
       styles$2 = { "previewsMain": "previews-module_previewsMain__31L3F", "previewsContent": "previews-module_previewsContent__1aMUf", "previewsToolsPanel": "previews-module_previewsToolsPanel__30jjI" };
       styleInject(css_248z$2);
       Previews = ({ children, palette = null }) => {
-        const [toolsPropsToEdit, setToolsPropsToEdit] = (0, import_react.useState)(null);
-        const [toolsPanelEnabled, enableToolsPanel] = (0, import_react.useState)(() => {
+        const [toolsPropsToEdit, setToolsPropsToEdit] = (0, import_react3.useState)(null);
+        const [toolsPanelEnabled, enableToolsPanel] = (0, import_react3.useState)(() => {
           var _a2;
           return (_a2 = window.__PROPERTIES_EDIT_PANEL_ENABLED__) !== null && _a2 !== void 0 ? _a2 : false;
         });
         const isPalettePath = useRoute(PALETTE_PATH);
-        const childrenWithSetProps = (0, import_react.useMemo)(() => {
-          return children ? import_react.default.Children.map(children, (child) => {
-            return import_react.default.cloneElement(child, { setToolsPropsToEdit });
+        const childrenWithSetProps = (0, import_react3.useMemo)(() => {
+          return children ? import_react3.default.Children.map(children, (child) => {
+            return import_react3.default.cloneElement(child, { setToolsPropsToEdit });
           }) : null;
         }, [children]);
-        (0, import_react.useEffect)(() => {
+        (0, import_react3.useEffect)(() => {
           var _a2;
           window.enableComponentsPropsPanelEditor = (toolsPanelStatus) => {
             var _a3;
@@ -24801,21 +24801,21 @@
         if (isPalettePath) {
           return palette;
         }
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: styles$2.previewsMain },
-          import_react.default.createElement("div", { className: styles$2.previewsContent }, childrenWithSetProps),
-          toolsPanelEnabled && import_react.default.createElement(
+          import_react3.default.createElement("div", { className: styles$2.previewsContent }, childrenWithSetProps),
+          toolsPanelEnabled && import_react3.default.createElement(
             "div",
             { className: styles$2.previewsToolsPanel },
-            import_react.default.createElement(ToolsPanel, { toolsPropsToEdit })
+            import_react3.default.createElement(ToolsPanel, { toolsPropsToEdit })
           )
         );
       };
       css_248z$1 = ".react-buddy-error-boundary-module_errorMessageContainer__1L848 {\n  width: 100%;\n  height: 100%;\n  padding-left: 20px;\n  padding-right: 20px;\n  background-color: #fff;\n}\n\n.react-buddy-error-boundary-module_errorMessageTitle__r4YnX {\n  color: #d32f2f;\n}\n\n.react-buddy-error-boundary-module_errorMessageStack__2XNRm {\n  color: #a9a9a9;\n  font-size: 0.8rem;\n  width: 100%;\n  overflow-x: scroll;\n}";
       styles$1 = { "errorMessageContainer": "react-buddy-error-boundary-module_errorMessageContainer__1L848", "errorMessageTitle": "react-buddy-error-boundary-module_errorMessageTitle__r4YnX", "errorMessageStack": "react-buddy-error-boundary-module_errorMessageStack__2XNRm" };
       styleInject(css_248z$1);
-      ReactBuddyErrorBoundary = class extends import_react.default.Component {
+      ReactBuddyErrorBoundary = class extends import_react3.default.Component {
         constructor() {
           super(...arguments);
           this.state = { error: null };
@@ -24833,32 +24833,32 @@
           const { error } = this.state;
           const { componentName, children } = this.props;
           if (error != null) {
-            return import_react.default.createElement(
+            return import_react3.default.createElement(
               "div",
               { className: styles$1.errorMessageContainer },
-              import_react.default.createElement("h2", { className: styles$1.errorMessageTitle }, componentName ? `Something went wrong while rendering ${componentName} component` : "Something went wrong"),
-              import_react.default.createElement("p", null, error.message),
-              import_react.default.createElement("pre", { className: styles$1.errorMessageStack }, error.stack)
+              import_react3.default.createElement("h2", { className: styles$1.errorMessageTitle }, componentName ? `Something went wrong while rendering ${componentName} component` : "Something went wrong"),
+              import_react3.default.createElement("p", null, error.message),
+              import_react3.default.createElement("pre", { className: styles$1.errorMessageStack }, error.stack)
             );
           }
           return children;
         }
       };
       Palette = ({ style, className, embeddable, children }) => {
-        return embeddable ? import_react.default.createElement(import_react.default.Fragment, null, children) : import_react.default.createElement("div", { style, className }, children);
+        return embeddable ? import_react3.default.createElement(import_react3.default.Fragment, null, children) : import_react3.default.createElement("div", { style, className }, children);
       };
-      CategoryContext = import_react.default.createContext({});
-      useCategoryContext = () => (0, import_react.useContext)(CategoryContext);
+      CategoryContext = import_react3.default.createContext({});
+      useCategoryContext = () => (0, import_react3.useContext)(CategoryContext);
       Category = ({ children, name, className, style }) => {
-        return import_react.default.createElement(CategoryContext.Provider, { value: { categoryClassName: className, categoryStyle: style } }, getTransformedCategoryChildren({
+        return import_react3.default.createElement(CategoryContext.Provider, { value: { categoryClassName: className, categoryStyle: style } }, getTransformedCategoryChildren({
           children,
           categoryName: name
         }));
       };
-      ComponentContext = import_react.default.createContext({});
-      useComponentContext = () => (0, import_react.useContext)(ComponentContext);
+      ComponentContext = import_react3.default.createContext({});
+      useComponentContext = () => (0, import_react3.useContext)(ComponentContext);
       Component2 = ({ children, categoryName, name, className, style }) => {
-        return import_react.default.createElement(ComponentContext.Provider, { value: { componentClassName: className, componentStyle: style } }, getTransformedComponentChildren({
+        return import_react3.default.createElement(ComponentContext.Provider, { value: { componentClassName: className, componentStyle: style } }, getTransformedComponentChildren({
           children,
           componentName: name,
           categoryName
@@ -24872,12 +24872,12 @@
         const { categoryClassName, categoryStyle } = useCategoryContext();
         const { componentClassName, componentStyle } = useComponentContext();
         const { variantClassName, variantStyle } = useVariantContext();
-        const paletteItemPath = (0, import_react.useMemo)(() => {
+        const paletteItemPath = (0, import_react3.useMemo)(() => {
           return getPaletteItemPath([categoryName, componentName, variantName]);
         }, [categoryName, componentName, variantName]);
         const isPathMatch = useRoute(paletteItemPath, true);
-        const [paletteNode, setPaletteNode] = (0, import_react.useState)(null);
-        (0, import_react.useLayoutEffect)(() => {
+        const [paletteNode, setPaletteNode] = (0, import_react3.useState)(null);
+        (0, import_react3.useLayoutEffect)(() => {
           if (paletteNode !== null)
             addFullWindowClassToParents(paletteNode);
           return () => {
@@ -24888,26 +24888,26 @@
         if (!isPathMatch) {
           return null;
         }
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           "div",
           { className: categoryClassName, style: categoryStyle },
-          import_react.default.createElement(
+          import_react3.default.createElement(
             "div",
             { className: componentClassName, style: componentStyle, ref: setPaletteNode },
-            import_react.default.createElement("div", { className: previewLayout === "center" ? classNames(styles.variantRouteCenter, variantClassName) : variantClassName, style: variantStyle }, children)
+            import_react3.default.createElement("div", { className: previewLayout === "center" ? classNames(styles.variantRouteCenter, variantClassName) : variantClassName, style: variantStyle }, children)
           )
         );
       };
-      VariantContext = import_react.default.createContext({});
-      useVariantContext = () => (0, import_react.useContext)(VariantContext);
+      VariantContext = import_react3.default.createContext({});
+      useVariantContext = () => (0, import_react3.useContext)(VariantContext);
       Variant = ({ children, categoryName, componentName, name, previewLayout, className, style }) => {
-        return import_react.default.createElement(
+        return import_react3.default.createElement(
           VariantContext.Provider,
           { value: { variantClassName: className, variantStyle: style } },
-          import_react.default.createElement(
+          import_react3.default.createElement(
             VariantRoute,
             { previewLayout, variantName: name, categoryName, componentName },
-            import_react.default.createElement(ReactBuddyErrorBoundary, { componentName }, children)
+            import_react3.default.createElement(ReactBuddyErrorBoundary, { componentName }, children)
           )
         );
       };
@@ -24916,16 +24916,16 @@
 
   // dev/palette.jsx
   function ExampleLoaderComponent() {
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_react3.Fragment, { children: "Loading..." });
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_react5.Fragment, { children: "Loading..." });
   }
-  var import_react3, import_jsx_runtime7, PaletteTree;
+  var import_react5, import_jsx_runtime12, PaletteTree;
   var init_palette = __esm({
     "dev/palette.jsx"() {
       "use strict";
-      import_react3 = __toESM(require_react());
+      import_react5 = __toESM(require_react());
       init_index_esm();
-      import_jsx_runtime7 = __toESM(require_jsx_runtime());
-      PaletteTree = () => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Palette, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Category, { name: "App", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Component2, { name: "Loader", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Variant, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(ExampleLoaderComponent, {}) }) }) }) });
+      import_jsx_runtime12 = __toESM(require_jsx_runtime());
+      PaletteTree = () => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Palette, { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Category, { name: "App", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Component2, { name: "Loader", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Variant, { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(ExampleLoaderComponent, {}) }) }) }) });
     }
   });
 
@@ -24934,15 +24934,15 @@
   __export(previews_exports, {
     default: () => previews_default
   });
-  var import_jsx_runtime8, ComponentPreviews, previews_default;
+  var import_jsx_runtime13, ComponentPreviews, previews_default;
   var init_previews = __esm({
     "dev/previews.jsx"() {
       "use strict";
       init_index_esm();
       init_palette();
-      import_jsx_runtime8 = __toESM(require_jsx_runtime());
+      import_jsx_runtime13 = __toESM(require_jsx_runtime());
       ComponentPreviews = () => {
-        return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Previews, { palette: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(PaletteTree, {}) });
+        return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Previews, { palette: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(PaletteTree, {}) });
       };
       previews_default = ComponentPreviews;
     }
@@ -24979,59 +24979,29 @@
     ] });
   };
 
-  // frontend/components/FormContainer/images/logo.svg
-  var logo_default = 'data:image/svg+xml,<svg width="130" height="101" viewBox="0 0 130 101" fill="none" xmlns="http://www.w3.org/2000/svg">%0A<mask id="mask0_124_167" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="14" y="0" width="101" height="101">%0A<circle cx="64.1201" cy="50.4427" r="50" fill="%23FFA304"/>%0A</mask>%0A<g mask="url(%23mask0_124_167)">%0A<path d="M121.305 34.7583H-0.272949C-0.272949 23.0399 52.7528 -15.9237 104.607 -14.4589C146.09 -13.2871 133.024 18.8409 121.305 34.7583Z" fill="%23FFA304"/>%0A<path d="M15.453 66.0648H137.031C137.031 77.7832 84.0056 116.747 32.1518 115.282C-9.33131 114.11 3.73466 81.9823 15.453 66.0648Z" fill="%23FFA304"/>%0A<circle cx="64.12" cy="50.4427" r="38.4073" fill="%23327F79"/>%0A</g>%0A<path d="M1.23702 43.0164L7.78744 58.8076C7.97715 59.2649 8.42359 59.5631 8.91874 59.5631H127.846C128.726 59.5631 129.319 58.6631 128.972 57.8548L122.187 42.0636C121.994 41.6139 121.552 41.3223 121.062 41.3223H2.36832C1.49518 41.3223 0.902469 42.2099 1.23702 43.0164Z" fill="%23F3F3F3"/>%0A<path d="M12.2808 55.0849V47.1115H9.53418V45.6182H16.6008V47.1115H13.8408V55.0849H12.2808ZM18.0059 55.0849V45.6182H19.5659V55.0849H18.0059ZM21.8862 45.6182H23.3128L26.6195 50.0982L29.9395 45.6182H31.3662V55.0849H29.7928V48.2982L26.6328 52.5915L23.4462 48.2849V55.0849H21.8862V45.6182ZM33.683 55.0849V45.6182H39.3764V47.1115H35.243V49.5382H38.5764V51.0315H35.243V53.5915H39.3764V55.0849H33.683ZM45.7183 55.0849V47.1115H42.9717V45.6182H50.0383V47.1115H47.2783V55.0849H45.7183ZM55.2941 53.7382C56.2185 53.7382 57.0007 53.4093 57.6407 52.7515C58.2807 52.0938 58.6007 51.2938 58.6007 50.3515C58.6007 49.4093 58.2807 48.6093 57.6407 47.9515C57.0007 47.2938 56.2185 46.9649 55.2941 46.9649C54.3607 46.9649 53.5741 47.2938 52.9341 47.9515C52.2941 48.6093 51.9741 49.4093 51.9741 50.3515C51.9741 51.2938 52.2941 52.0938 52.9341 52.7515C53.5741 53.4093 54.3607 53.7382 55.2941 53.7382ZM58.7607 53.8182C57.8096 54.7693 56.6541 55.2449 55.2941 55.2449C53.9341 55.2449 52.7785 54.7738 51.8274 53.8315C50.8763 52.8804 50.4007 51.7204 50.4007 50.3515C50.4007 48.9826 50.8763 47.8271 51.8274 46.8849C52.7785 45.9338 53.9341 45.4582 55.2941 45.4582C56.6541 45.4582 57.8096 45.9338 58.7607 46.8849C59.7119 47.836 60.1874 48.9915 60.1874 50.3515C60.1874 51.7115 59.7119 52.8671 58.7607 53.8182ZM65.0372 55.0849V45.6182H70.7305V47.1115H66.5972V49.5382H69.9305V51.0315H66.5972V53.5915H70.7305V55.0849H65.0372ZM80.7775 55.0849H79.4175L74.0842 48.2715V55.0849H72.5242V45.6182H73.8842L79.2042 52.4182V45.6182H80.7775V55.0849ZM87.6171 55.2449C86.1326 55.2449 84.906 54.7782 83.9371 53.8449C82.9771 52.9115 82.4971 51.7471 82.4971 50.3515C82.4971 48.9738 82.9682 47.8138 83.9104 46.8715C84.8615 45.9293 86.0438 45.4582 87.4571 45.4582C88.9682 45.4582 90.1904 45.9338 91.1238 46.8849L90.0571 47.9915C89.3726 47.3071 88.506 46.9649 87.4571 46.9649C86.4793 46.9649 85.6704 47.2938 85.0304 47.9515C84.3904 48.6004 84.0704 49.4004 84.0704 50.3515C84.0704 51.3293 84.3904 52.1382 85.0304 52.7782C85.6793 53.4182 86.5371 53.7382 87.6038 53.7382C88.6171 53.7382 89.3726 53.5338 89.8704 53.1249V51.0182H87.4971V49.5515H91.3904V53.8849C90.9815 54.3293 90.4393 54.6671 89.7638 54.8982C89.0882 55.1293 88.3726 55.2449 87.6171 55.2449ZM93.2794 55.0849V45.6182H94.8394V53.5915H99.1727V55.0849H93.2794ZM100.597 55.0849V45.6182H102.157V55.0849H100.597ZM107.117 55.2449C106.362 55.2449 105.682 55.0893 105.077 54.7782C104.473 54.4671 104.028 54.0538 103.744 53.5382L104.971 52.5649C105.495 53.3738 106.228 53.7782 107.171 53.7782C107.624 53.7782 107.993 53.6715 108.277 53.4582C108.562 53.236 108.704 52.9515 108.704 52.6049C108.704 51.9738 108.255 51.4938 107.357 51.1649L106.317 50.7915C105.553 50.516 104.988 50.1649 104.624 49.7382C104.26 49.3026 104.077 48.7649 104.077 48.1249C104.077 47.316 104.366 46.6715 104.944 46.1915C105.522 45.7026 106.26 45.4582 107.157 45.4582C108.357 45.4582 109.313 45.8893 110.024 46.7515L108.944 47.8049C108.455 47.2182 107.855 46.9249 107.144 46.9249C106.726 46.9249 106.371 47.0226 106.077 47.2182C105.793 47.4138 105.651 47.6804 105.651 48.0182C105.651 48.3471 105.757 48.6093 105.971 48.8049C106.193 48.9915 106.566 49.1826 107.091 49.3782L108.051 49.7382C108.78 50.0138 109.335 50.3738 109.717 50.8182C110.1 51.2626 110.286 51.8271 110.277 52.5115C110.277 53.3293 109.984 53.9915 109.397 54.4982C108.811 54.996 108.051 55.2449 107.117 55.2449ZM111.964 55.0849V45.6182H113.524V49.5382H118.204V45.6182H119.764V55.0849H118.204V51.0182H113.524V55.0849H111.964Z" fill="%23373737"/>%0A</svg>%0A';
-
-  // frontend/components/FormContainer/FormContainer.module.css
-  var FormContainer_default = {
-    FormContainer: "FormContainer_FormContainer",
-    Form: "FormContainer_Form",
-    LogoBar: "FormContainer_LogoBar",
-    logo: "FormContainer_logo"
+  // frontend/components/FormLogContainer/FormLogContainer.module.css
+  var FormLogContainer_default = {
+    FormContainer: "FormLogContainer_FormContainer",
+    Form: "FormLogContainer_Form",
+    LogoBar: "FormLogContainer_LogoBar",
+    logo: "FormLogContainer_logo"
   };
 
   // frontend/components/FormLogIn/FormLogIn.module.css
   var FormLogIn_default = {
     Title: "FormLogIn_Title",
+    PasswordContainer: "FormLogIn_PasswordContainer",
     Form: "FormLogIn_Form",
     LoginForm: "FormLogIn_LoginForm",
     PasswordForm: "FormLogIn_PasswordForm",
     ButtonsBlock: "FormLogIn_ButtonsBlock",
     LogInButton: "FormLogIn_LogInButton",
-    SingUpButton: "FormLogIn_SingUpButton"
+    SingUpButton: "FormLogIn_SingUpButton",
+    ButtonPassword: "FormLogIn_ButtonPassword"
   };
 
   // frontend/components/FormLogIn/FormLogIn.tsx
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
-  var FormLogIn = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("form", { className: FormLogIn_default.Form, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { className: FormLogIn_default.Title, children: "Log In" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.LoginForm, placeholder: "Login", type: "text" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.PasswordForm, placeholder: "Password", type: "password" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: FormLogIn_default.ButtonsBlock, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { className: FormLogIn_default.LogInButton, value: "Log In", type: "submit" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: FormLogIn_default.SingUpButton, children: "Sing up" })
-      ] })
-    ] });
-  };
-
-  // frontend/components/FormContainer/FormContainer.tsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
-  var FormContainer = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: FormContainer_default.FormContainer, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: FormContainer_default.LogoBar, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("img", { className: FormContainer_default.logo, src: logo_default, alt: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: FormContainer_default.Form, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(FormLogIn, {}) })
-    ] });
-  };
-
-  // frontend/components/LogScreen/LogScreen.tsx
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
-  var LogScreen = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: LogScreen_default.LogScreen, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(TitleContainer, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(FormContainer, {})
-    ] });
-  };
+  var import_react = __toESM(require_react());
 
   // node_modules/react-router-dom/dist/index.js
   var React2 = __toESM(require_react());
@@ -26962,26 +26932,152 @@
     return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
   }
 
+  // frontend/components/InvisiblePasswordButton/InvisiblePasswordButton.tsx
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var InvisiblePasswordButton = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("svg", { width: "30", height: "24", viewBox: "0 0 24 16", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("path", { d: "M21.9834 2.82632C21.9834 8.44572 17.5062 13.0012 11.9834 13.0012C6.46051 13.0012 1.9834 8.44572 1.9834 2.82632", stroke: "white", "stroke-width": "2.50098", "stroke-linecap": "round", "stroke-linejoin": "round" }) });
+  };
+
+  // frontend/components/VisiblePasswordButton/VisiblePasswordButton.tsx
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var VisiblePasswordButton = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("svg", { width: "30", height: "24", viewBox: "0 0 30 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("path", { d: "M2.05469 14.7674C2.05469 7.57734 7.78321 1.74866 14.8497 1.74866C21.9162 1.74866 27.6447 7.57734 27.6447 14.7674M21.958 14.7674C21.958 18.7618 18.7755 22 14.8497 22C10.9239 22 7.74135 18.7618 7.74135 14.7674C7.74135 10.7729 10.9239 7.53475 14.8497 7.53475C18.7755 7.53475 21.958 10.7729 21.958 14.7674Z", stroke: "white", "stroke-width": "3.2", "stroke-linecap": "round", "stroke-linejoin": "round" }) });
+  };
+
+  // frontend/components/FormLogIn/FormLogIn.tsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var FormLogIn = () => {
+    const [PasswordShown, setPasswordShown] = (0, import_react.useState)(false);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("form", { className: FormLogIn_default.Form, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { className: FormLogIn_default.Title, children: "Log In" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("input", { className: FormLogIn_default.LoginForm, placeholder: "Login", type: "text" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: FormLogIn_default.PasswordContainer, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("input", { className: FormLogIn_default.PasswordForm, type: PasswordShown ? "text" : "password", placeholder: "Password" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: FormLogIn_default.ButtonPassword, onClick: () => {
+          setPasswordShown(!PasswordShown);
+        }, children: PasswordShown ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(VisiblePasswordButton, {}) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(InvisiblePasswordButton, {}) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: FormLogIn_default.ButtonsBlock, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("input", { className: FormLogIn_default.LogInButton, value: "Log In", type: "submit" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link, { to: "/signup", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { className: FormLogIn_default.SingUpButton, children: "Sing up" }) })
+      ] })
+    ] });
+  };
+
+  // frontend/components/Logo/Logo.tsx
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var Logo = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("svg", { width: "150", height: "121", viewBox: "0 0 130 101", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("mask", { id: "mask0_124_167", className: "mask-type:alpha", maskUnits: "userSpaceOnUse", x: "14", y: "0", width: "101", height: "101", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("circle", { cx: "64.1201", cy: "50.4427", r: "50", fill: "#FFA304" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("g", { mask: "url(#mask0_124_167)", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("path", { d: "M121.305 34.7583H-0.272949C-0.272949 23.0399 52.7528 -15.9237 104.607 -14.4589C146.09 -13.2871 133.024 18.8409 121.305 34.7583Z", fill: "#FFA304" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("path", { d: "M15.453 66.0648H137.031C137.031 77.7832 84.0056 116.747 32.1518 115.282C-9.33131 114.11 3.73466 81.9823 15.453 66.0648Z", fill: "#FFA304" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("circle", { cx: "64.12", cy: "50.4427", r: "38.4073", fill: "#327F79" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("path", { d: "M1.23702 43.0164L7.78744 58.8076C7.97715 59.2649 8.42359 59.5631 8.91874 59.5631H127.846C128.726 59.5631 129.319 58.6631 128.972 57.8548L122.187 42.0636C121.994 41.6139 121.552 41.3223 121.062 41.3223H2.36832C1.49518 41.3223 0.902469 42.2099 1.23702 43.0164Z", fill: "#F3F3F3" }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("path", { d: "M12.2808 55.0849V47.1115H9.53418V45.6182H16.6008V47.1115H13.8408V55.0849H12.2808ZM18.0059 55.0849V45.6182H19.5659V55.0849H18.0059ZM21.8862 45.6182H23.3128L26.6195 50.0982L29.9395 45.6182H31.3662V55.0849H29.7928V48.2982L26.6328 52.5915L23.4462 48.2849V55.0849H21.8862V45.6182ZM33.683 55.0849V45.6182H39.3764V47.1115H35.243V49.5382H38.5764V51.0315H35.243V53.5915H39.3764V55.0849H33.683ZM45.7183 55.0849V47.1115H42.9717V45.6182H50.0383V47.1115H47.2783V55.0849H45.7183ZM55.2941 53.7382C56.2185 53.7382 57.0007 53.4093 57.6407 52.7515C58.2807 52.0938 58.6007 51.2938 58.6007 50.3515C58.6007 49.4093 58.2807 48.6093 57.6407 47.9515C57.0007 47.2938 56.2185 46.9649 55.2941 46.9649C54.3607 46.9649 53.5741 47.2938 52.9341 47.9515C52.2941 48.6093 51.9741 49.4093 51.9741 50.3515C51.9741 51.2938 52.2941 52.0938 52.9341 52.7515C53.5741 53.4093 54.3607 53.7382 55.2941 53.7382ZM58.7607 53.8182C57.8096 54.7693 56.6541 55.2449 55.2941 55.2449C53.9341 55.2449 52.7785 54.7738 51.8274 53.8315C50.8763 52.8804 50.4007 51.7204 50.4007 50.3515C50.4007 48.9826 50.8763 47.8271 51.8274 46.8849C52.7785 45.9338 53.9341 45.4582 55.2941 45.4582C56.6541 45.4582 57.8096 45.9338 58.7607 46.8849C59.7119 47.836 60.1874 48.9915 60.1874 50.3515C60.1874 51.7115 59.7119 52.8671 58.7607 53.8182ZM65.0372 55.0849V45.6182H70.7305V47.1115H66.5972V49.5382H69.9305V51.0315H66.5972V53.5915H70.7305V55.0849H65.0372ZM80.7775 55.0849H79.4175L74.0842 48.2715V55.0849H72.5242V45.6182H73.8842L79.2042 52.4182V45.6182H80.7775V55.0849ZM87.6171 55.2449C86.1326 55.2449 84.906 54.7782 83.9371 53.8449C82.9771 52.9115 82.4971 51.7471 82.4971 50.3515C82.4971 48.9738 82.9682 47.8138 83.9104 46.8715C84.8615 45.9293 86.0438 45.4582 87.4571 45.4582C88.9682 45.4582 90.1904 45.9338 91.1238 46.8849L90.0571 47.9915C89.3726 47.3071 88.506 46.9649 87.4571 46.9649C86.4793 46.9649 85.6704 47.2938 85.0304 47.9515C84.3904 48.6004 84.0704 49.4004 84.0704 50.3515C84.0704 51.3293 84.3904 52.1382 85.0304 52.7782C85.6793 53.4182 86.5371 53.7382 87.6038 53.7382C88.6171 53.7382 89.3726 53.5338 89.8704 53.1249V51.0182H87.4971V49.5515H91.3904V53.8849C90.9815 54.3293 90.4393 54.6671 89.7638 54.8982C89.0882 55.1293 88.3726 55.2449 87.6171 55.2449ZM93.2794 55.0849V45.6182H94.8394V53.5915H99.1727V55.0849H93.2794ZM100.597 55.0849V45.6182H102.157V55.0849H100.597ZM107.117 55.2449C106.362 55.2449 105.682 55.0893 105.077 54.7782C104.473 54.4671 104.028 54.0538 103.744 53.5382L104.971 52.5649C105.495 53.3738 106.228 53.7782 107.171 53.7782C107.624 53.7782 107.993 53.6715 108.277 53.4582C108.562 53.236 108.704 52.9515 108.704 52.6049C108.704 51.9738 108.255 51.4938 107.357 51.1649L106.317 50.7915C105.553 50.516 104.988 50.1649 104.624 49.7382C104.26 49.3026 104.077 48.7649 104.077 48.1249C104.077 47.316 104.366 46.6715 104.944 46.1915C105.522 45.7026 106.26 45.4582 107.157 45.4582C108.357 45.4582 109.313 45.8893 110.024 46.7515L108.944 47.8049C108.455 47.2182 107.855 46.9249 107.144 46.9249C106.726 46.9249 106.371 47.0226 106.077 47.2182C105.793 47.4138 105.651 47.6804 105.651 48.0182C105.651 48.3471 105.757 48.6093 105.971 48.8049C106.193 48.9915 106.566 49.1826 107.091 49.3782L108.051 49.7382C108.78 50.0138 109.335 50.3738 109.717 50.8182C110.1 51.2626 110.286 51.8271 110.277 52.5115C110.277 53.3293 109.984 53.9915 109.397 54.4982C108.811 54.996 108.051 55.2449 107.117 55.2449ZM111.964 55.0849V45.6182H113.524V49.5382H118.204V45.6182H119.764V55.0849H118.204V51.0182H113.524V55.0849H111.964Z", fill: "#373737" })
+    ] });
+  };
+
+  // frontend/components/FormLogContainer/FormLogContainer.tsx
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var FormLogContainer = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: FormLogContainer_default.FormContainer, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: FormLogContainer_default.LogoBar, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Logo, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: FormLogContainer_default.Form, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(FormLogIn, {}) })
+    ] });
+  };
+
+  // frontend/components/LogScreen/LogScreen.tsx
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
+  var LogScreen = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: LogScreen_default.LogScreen, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(TitleContainer, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FormLogContainer, {})
+    ] });
+  };
+
   // frontend/components/SignUpScreen/SignUpScreen.module.css
   var SignUpScreen_default = {
     SignUpScreen: "SignUpScreen_SignUpScreen"
   };
 
+  // frontend/components/FormSignUpContainer/FormSignUpContainer.module.css
+  var FormSignUpContainer_default = {
+    FormContainer: "FormSignUpContainer_FormContainer",
+    Form: "FormSignUpContainer_Form",
+    LogoBar: "FormSignUpContainer_LogoBar",
+    logo: "FormSignUpContainer_logo"
+  };
+
+  // frontend/components/SignUpForm/SignUpForm.module.css
+  var SignUpForm_default = {
+    Title: "SignUpForm_Title",
+    PasswordContainer: "SignUpForm_PasswordContainer",
+    ConfirmPasswordContainer: "SignUpForm_ConfirmPasswordContainer",
+    Form: "SignUpForm_Form",
+    SignUpForm: "SignUpForm_SignUpForm",
+    PasswordForm: "SignUpForm_PasswordForm",
+    ConfirmPasswordForm: "SignUpForm_ConfirmPasswordForm",
+    ButtonsBlock: "SignUpForm_ButtonsBlock",
+    SignInButton: "SignUpForm_SignInButton",
+    LogInButton: "SignUpForm_LogInButton",
+    ButtonPassword: "SignUpForm_ButtonPassword",
+    ConfirmButtonPassword: "SignUpForm_ConfirmButtonPassword"
+  };
+
+  // frontend/components/SignUpForm/SignUpFrom.tsx
+  var import_react2 = __toESM(require_react());
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  var SignUpFrom = () => {
+    const [PasswordShown, setPasswordShown] = (0, import_react2.useState)(false);
+    const [ConfirmPasswordShown, setConfirmPasswordShown] = (0, import_react2.useState)(false);
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("form", { className: SignUpForm_default.Form, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: SignUpForm_default.Title, children: "Sign Up" }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignUpForm, placeholder: "Login", type: "text" }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.PasswordContainer, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.PasswordForm, type: PasswordShown ? "text" : "password", placeholder: "Password" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: SignUpForm_default.ButtonPassword, onClick: () => {
+          setPasswordShown(!PasswordShown);
+        }, children: PasswordShown ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(VisiblePasswordButton, {}) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(InvisiblePasswordButton, {}) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.ConfirmPasswordContainer, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.ConfirmPasswordForm, type: ConfirmPasswordShown ? "text" : "password", placeholder: "Confirm Password" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: SignUpForm_default.ConfirmButtonPassword, onClick: () => {
+          setConfirmPasswordShown(!ConfirmPasswordShown);
+        }, children: ConfirmPasswordShown ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(VisiblePasswordButton, {}) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(InvisiblePasswordButton, {}) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.ButtonsBlock, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignInButton, value: "Sign In", type: "submit" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Link, { to: "/login", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { className: SignUpForm_default.LogInButton, children: "Log In" }) })
+      ] })
+    ] });
+  };
+
+  // frontend/components/FormSignUpContainer/FormSignUpContainer.tsx
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  var FormSignUpContainer = () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: FormSignUpContainer_default.FormContainer, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: FormSignUpContainer_default.LogoBar, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Logo, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: FormSignUpContainer_default.Form, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SignUpFrom, {}) })
+    ] });
+  };
+
   // frontend/components/SignUpScreen/SignUpScreen.tsx
-  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   var SignUpScreen = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: SignUpScreen_default.SignUpScreen, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TitleContainer, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(FormContainer, {})
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: SignUpScreen_default.SignUpScreen, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(TitleContainer, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(FormSignUpContainer, {})
     ] });
   };
 
   // frontend/pages/App.tsx
-  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   function Application() {
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(Routes, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Route, { path: "/login", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(LogScreen, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Route, { path: "/signup", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SignUpScreen, {}) })
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(Routes, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Route, { path: "/login", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(LogScreen, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Route, { path: "/signup", index: true, element: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(SignUpScreen, {}) })
     ] }) });
   }
 
@@ -26989,12 +27085,12 @@
   init_index_esm();
 
   // dev/index.js
-  var import_react4 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
 
   // dev/useInitial.js
-  var import_react2 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
   var useInitial = () => {
-    const [status, setStatus] = (0, import_react2.useState)({
+    const [status, setStatus] = (0, import_react4.useState)({
       loading: false,
       error: false
     });
@@ -27002,18 +27098,18 @@
   };
 
   // dev/index.js
-  var ComponentPreviews2 = import_react4.default.lazy(() => Promise.resolve().then(() => (init_previews(), previews_exports)));
+  var ComponentPreviews2 = import_react6.default.lazy(() => Promise.resolve().then(() => (init_previews(), previews_exports)));
 
   // frontend/index.tsx
-  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime14 = __toESM(require_jsx_runtime());
   var root = import_client.default.createRoot(document.querySelector("#application"));
   root.render(
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
       DevSupport,
       {
         ComponentPreviews: ComponentPreviews2,
         useInitialHook: useInitial,
-        children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Application, {})
+        children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Application, {})
       }
     )
   );

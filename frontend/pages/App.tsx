@@ -1,7 +1,7 @@
-import {LogScreen} from "../components/LogScreen/LogScreen.tsx";
+import {LogScreen} from "../components/LogScreen/LogScreen";
 import {Route, Routes} from "react-router-dom";
 import {BrowserRouter} from "react-router-dom";
-import {SignUpScreen} from "../components/SignUpScreen/SignUpScreen.tsx";
+import {SignUpScreen} from "../components/SignUpScreen/SignUpScreen";
 import React from "react";
 export function Application(){
     return (

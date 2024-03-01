@@ -1,0 +1,30 @@
+.FormContainer {
+    background-color: #327F79;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 42.8%;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+
+}
+
+.Form{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.LogoBar{
+    position: absolute;
+    right: 170px;
+    margin-top: 50px;
+}
+
+.logo{
+    max-width: 130px;
+    max-height: 100px;
+    justify-self: right;
+}
+
