@@ -36,7 +36,7 @@ func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func postRequest(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		//if r.Method != "POST" {
 		//	http.Redirect(w, r, "/login", http.StatusSeeOther)
