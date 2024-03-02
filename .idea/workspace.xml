@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd8b7eaf-342d-4efc-bc61-7d7e495cab06" name="Changes" comment="Добавил страницу регистрации">
+      <change afterPath="$PROJECT_DIR$/dev/logination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/infotechQuizlet/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/infotechQuizlet/handlers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/FormLogIn/FormLogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/FormLogIn/FormLogIn.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
         <option value="com.intellij.reactbuddy.README" />
         <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>

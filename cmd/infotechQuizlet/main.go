@@ -43,7 +43,7 @@ func main() {
 
 	mux := mux.NewRouter()
 
-	mux.HandleFunc("/login", index(dbx)).Methods(http.MethodPost)
+	mux.HandleFunc("/login", index(dbx))
 	mux.HandleFunc("/post_request", logination(dbx))
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
