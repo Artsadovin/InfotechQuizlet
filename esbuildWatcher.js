@@ -8,6 +8,7 @@ esbuild
         minify: true,
     loader: {
             '.svg': 'dataurl',
+            '.ttf': 'dataurl',
     },
     })
     .then(() => console.log("Z_Build complete!_Z"))
@@ -21,6 +22,7 @@ async function watch() {
         bundle: true,
         loader: {
             '.svg': 'dataurl',
+            '.ttf': 'dataurl',
         },
     });
     await ctx.watch();

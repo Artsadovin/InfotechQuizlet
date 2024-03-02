@@ -15,6 +15,7 @@ func main() {
 
 	mux.HandleFunc("/login", index)
 	mux.HandleFunc("/signup", index)
+	mux.HandleFunc("/main", index)
 	// Реализуем отдачу статики
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))

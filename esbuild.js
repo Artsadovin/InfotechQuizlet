@@ -8,6 +8,7 @@ esbuild
         minify: true,
     loader: {
             '.svg': 'dataurl',
+            '.ttf': 'dataurl',
     },
     })
     .then(() => console.log("Z_Build complete!_Z"))

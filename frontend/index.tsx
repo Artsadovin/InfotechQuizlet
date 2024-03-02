@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import {Application} from './pages/App'
 import {DevSupport} from "@react-buddy/ide-toolbox";
 import {ComponentPreviews, useInitial} from "../dev";
-
+import "./intex.module.css"
 const root = ReactDOM.createRoot(document.querySelector('#application') as HTMLElement)
 
 root.render(

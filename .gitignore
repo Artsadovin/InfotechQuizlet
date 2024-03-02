@@ -1,2 +1,4 @@
 /node_modules
 node_modeles/*
+/.idea
+.idea/*
