@@ -1,13 +1,15 @@
 import styles from "./SignUpScreen.module.css"
-import {TitleContainer} from "../TitleContainer/TitleContainer.tsx";
-import {FormContainer} from "../FormContainer/FormContainer.tsx";
+// @ts-ignore
+import {TitleContainer} from "../TitleContainer/TitleContainer";
+// @ts-ignore
+import {FormSignUpContainer} from "../FormSignUpContainer/FormSignUpContainer";
 
 
 export const SignUpScreen = () => {
     return (
         <div className={styles.SignUpScreen}>
             <TitleContainer/>
-            <FormContainer/>
+            <FormSignUpContainer/>
         </div>
     )
 }

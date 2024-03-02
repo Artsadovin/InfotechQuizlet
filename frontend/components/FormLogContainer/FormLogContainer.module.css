@@ -19,12 +19,12 @@
 .LogoBar{
     position: absolute;
     right: 170px;
+    margin-top: 50px;
 }
 
 .logo{
     max-width: 130px;
     max-height: 100px;
-    margin-top: 50px;
     justify-self: right;
 }
 

@@ -1,11 +1,12 @@
 import logo from "./images/logo.svg"
-import styles from "./FormContainer.module.css"
-import {FormLogIn} from "../FormLogIn/FormLogIn.tsx";
-export const FormContainer = () => {
+import styles from "./FormLogContainer.module.css"
+import {FormLogIn} from "../FormLogIn/FormLogIn";
+import {Logo} from "../Logo/Logo";
+export const FormLogContainer = () => {
     return (
         <div className={styles.FormContainer}>
             <div className={styles.LogoBar}>
-                <img className={styles.logo} src={logo} alt={"картинка"}/>
+                <Logo/>
             </div>
             <div className={styles.Form}>
                 <FormLogIn/>
