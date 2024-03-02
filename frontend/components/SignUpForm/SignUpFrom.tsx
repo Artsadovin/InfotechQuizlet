@@ -1,11 +1,8 @@
 import styles from "./SignUpForm.module.css"
-
-import {useRef, useState} from "react";
+import {useState} from "react";
 import {Link} from "react-router-dom";
 import {InvisiblePasswordButton} from "../InvisiblePasswordButton/InvisiblePasswordButton";
 import {VisiblePasswordButton} from "../VisiblePasswordButton/VisiblePasswordButton";
-
-
 
 export const SignUpFrom = () => {
 
@@ -44,6 +41,5 @@ export const SignUpFrom = () => {
                 </Link>
             </div>
         </form>
-
     )
 }

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Euclid Circular B";
+    src: url("./fonts/EuclidCircularB/EuclidCircularB-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Pribambas";
+    src: url("./fonts/Pribambas/Pribambas-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
