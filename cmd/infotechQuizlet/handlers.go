@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/jmoiron/sqlx"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
 )
@@ -11,9 +13,9 @@ import (
 type indexPage struct {
 }
 
-type loginData struct {
-	login    string
-	password string
+type loginUserRequest struct {
+	Login    string `json:"login"`
+	Password string `json:"password"`
 }
 
 func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
@@ -38,20 +40,16 @@ func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 
 func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		//if r.Method != "POST" {
-		//	http.Redirect(w, r, "/login", http.StatusSeeOther)
-		//	return
-		//}
-
-		login := r.FormValue("login")
-		password := r.FormValue("password")
-		fmt.Println(login)
-		fmt.Println(password)
-
+		reqData, err := io.ReadAll(r.Body) // Прочитали тело запроса с reqData в виде массива байт
+		if err != nil {
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			log.Println(err)
+			return
+		}
 		/*data := loginData{
 			login:    login,
 			password: password,
-		} */
+		}
 
 		row := dbx.QueryRow("SELECT * FROM user WHERE nickname=? AND password=?", login, password)
 		var id int
@@ -64,6 +62,16 @@ func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 		}
 		fmt.Println(nickname)
 		fmt.Println(p)
+		*/
+		var req loginUserRequest
+
+		err = json.Unmarshal(reqData, &req) // Отдали reqData и req на парсинг библиотеке json
+		if err != nil {
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			log.Println(err)
+			return
+		}
+		fmt.Println(req.Login, ' ', req.Password)
 		return
 	}
 }

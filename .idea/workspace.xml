@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd8b7eaf-342d-4efc-bc61-7d7e495cab06" name="Changes" comment="Добавил страницу регистрации">
+      <change afterPath="$PROJECT_DIR$/dev/logination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/infotechQuizlet/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/FormLogIn/FormLogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/FormLogIn/FormLogIn.tsx" afterDir="false" />
+>>>>>>> parent of 9d327d5 (123)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
