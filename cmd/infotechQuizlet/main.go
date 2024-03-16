@@ -44,7 +44,7 @@ func main() {
 	mux := mux.NewRouter()
 
 	mux.HandleFunc("/login", index(dbx))
-	mux.HandleFunc("api/user", logination(dbx)).Methods(http.MethodPost)
+	mux.HandleFunc("/api/user", logination(dbx)).Methods(http.MethodPost)
 	// Реализуем отдачу статики
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))

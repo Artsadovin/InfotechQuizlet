@@ -37,7 +37,7 @@ export const FormLogIn = () => {
                     if(refLogin.current! && refPassword.current!){
                         console.log(refLogin.current!.value)
                         console.log(refPassword.current!.value)
-                        fetchPostRequest('api/user', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
+                        fetchPostRequest('/api/user', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
                             (response) => {
                                 if(!response.ok){
                                     throw new Error('hui')
