@@ -50,26 +50,9 @@ func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 			return
 		}
-		/*data := loginData{
-			login:    login,
-			password: password,
-		}
-
-		row := dbx.QueryRow("SELECT * FROM user WHERE nickname=? AND password=?", login, password)
-		var id int
-		var nickname string
-		var p string
-		var avatar_id int
-		err := row.Scan(&id, &nickname, &p, &avatar_id)
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Println(nickname)
-		fmt.Println(p)
-		*/
 		var req userData
 
-		err = json.Unmarshal(reqData, &req) // Отдали reqData и req на парсинг библиотеке json
+		err = json.Unmarshal(reqData, &req)
 		if err != nil {
 			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 			log.Println(err)
