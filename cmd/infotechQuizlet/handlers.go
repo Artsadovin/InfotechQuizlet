@@ -13,9 +13,13 @@ import (
 type indexPage struct {
 }
 
-type loginUserRequest struct {
+type userData struct {
 	Login    string `json:"login"`
 	Password string `json:"password"`
+}
+
+type UserIdDb struct {
+	UserID int `db:"user_id"`
 }
 
 func index(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
@@ -63,7 +67,7 @@ func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(nickname)
 		fmt.Println(p)
 		*/
-		var req loginUserRequest
+		var req userData
 
 		err = json.Unmarshal(reqData, &req) // Отдали reqData и req на парсинг библиотеке json
 		if err != nil {
@@ -72,6 +76,32 @@ func logination(dbx *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		fmt.Println(req.Login, ' ', req.Password)
+		user, err := findUserById(dbx, req)
+		if err != nil {
+			http.Error(w, "Incorrect password or login", 401)
+			return
+		}
 		return
 	}
+}
+
+func findUserById(db *sqlx.DB, user userData) (UserIdDb, error) {
+	const query = `
+		SELECT
+			user_id
+		FROM
+		 ` + "`user`" +
+		`WHERE
+			nickname = ? AND
+			password = ?;
+	`
+	var userD UserIdDb
+
+	// Обязательно нужно передать в параметрах orderID
+	err := db.Get(&userD, query, user.Login, user.Password)
+	if err != nil {
+		return UserIdDb{}, err
+	}
+
+	return userD, nil
 }
