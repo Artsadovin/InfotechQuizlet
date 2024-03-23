@@ -16,6 +16,7 @@ export const FormLogIn = () => {
 
     const refLogin = useRef<HTMLInputElement>(null)
     const refPassword = useRef<HTMLInputElement>(null)
+
     return(
         <form className={styles.Form}>
             <h2 className={styles.Title}>Log In</h2>
@@ -37,10 +38,10 @@ export const FormLogIn = () => {
                     if(refLogin.current! && refPassword.current!){
                         console.log(refLogin.current!.value)
                         console.log(refPassword.current!.value)
-                        fetchPostRequest('api/user', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
+                        fetchPostRequest('api/login', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
                             (response) => {
                                 if(!response.ok){
-                                    throw new Error('hui')
+                                    throw new Error('error')
                                 }
                                 console.log('ura')
                         }

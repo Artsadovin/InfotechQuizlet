@@ -1100,7 +1100,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef4(initialValue) {
+          function useRef5(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
@@ -1893,7 +1893,7 @@
           exports.useLayoutEffect = useLayoutEffect4;
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
-          exports.useRef = useRef4;
+          exports.useRef = useRef5;
           exports.useState = useState7;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
@@ -28058,10 +28058,10 @@
           if (refLogin.current && refPassword.current) {
             console.log(refLogin.current.value);
             console.log(refPassword.current.value);
-            fetchPostRequest("api/user", { login: refLogin.current.value, password: refPassword.current.value }).then(
+            fetchPostRequest("api/login", { login: refLogin.current.value, password: refPassword.current.value }).then(
               (response) => {
                 if (!response.ok) {
-                  throw new Error("hui");
+                  throw new Error("error");
                 }
                 console.log("ura");
               }
@@ -28142,24 +28142,44 @@
   var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   var SignUpFrom = () => {
     const [PasswordShown, setPasswordShown] = (0, import_react2.useState)(false);
+    const refLogin = (0, import_react2.useRef)(null);
+    const refPassword = (0, import_react2.useRef)(null);
+    const refConfPassword = (0, import_react2.useRef)(null);
     const [ConfirmPasswordShown, setConfirmPasswordShown] = (0, import_react2.useState)(false);
     return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("form", { className: SignUpForm_default.Form, children: [
       /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: SignUpForm_default.Title, children: "Sign Up" }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignUpForm, placeholder: "Login", type: "text" }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignUpForm, placeholder: "Login", type: "text", ref: refLogin }),
       /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.PasswordContainer, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.PasswordForm, type: PasswordShown ? "text" : "password", placeholder: "Password" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.PasswordForm, type: PasswordShown ? "text" : "password", placeholder: "Password", ref: refPassword }),
         /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: SignUpForm_default.ButtonPassword, onClick: () => {
           setPasswordShown(!PasswordShown);
         }, children: PasswordShown ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(VisiblePasswordButton, {}) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(InvisiblePasswordButton, {}) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.ConfirmPasswordContainer, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.ConfirmPasswordForm, type: ConfirmPasswordShown ? "text" : "password", placeholder: "Confirm Password" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.ConfirmPasswordForm, type: ConfirmPasswordShown ? "text" : "password", placeholder: "Confirm Password", ref: refConfPassword }),
         /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: SignUpForm_default.ConfirmButtonPassword, onClick: () => {
           setConfirmPasswordShown(!ConfirmPasswordShown);
         }, children: ConfirmPasswordShown ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(VisiblePasswordButton, {}) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(InvisiblePasswordButton, {}) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: SignUpForm_default.ButtonsBlock, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignInButton, value: "Sign In", type: "submit" }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("input", { className: SignUpForm_default.SignInButton, value: "Sign Up", type: "submit", onClick: (event) => {
+          event.preventDefault();
+          if (refLogin.current && refPassword.current) {
+            console.log(refLogin.current.value);
+            console.log(refPassword.current.value);
+            console.log(refConfPassword.current.value);
+            fetchPostRequest("api/sign", { login: refLogin.current.value, password: refPassword.current.value, confPassword: refConfPassword.current.value }).then(
+              (response) => {
+                if (!response.ok) {
+                  throw new Error("error");
+                }
+                console.log("ura");
+              }
+            ).catch((e) => {
+              console.log("\u043E\u0448\u0438\u0431\u043E\u0447\u043A\u0430");
+            });
+          }
+        } }),
         /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Link, { to: "/login", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { className: SignUpForm_default.LogInButton, children: "Log In" }) })
       ] })
     ] });
