@@ -3,7 +3,7 @@ CREATE TABLE user
     `user_id` INT NOT NULL AUTO_INCREMENT,
     `nickname` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
-    `avatar_id` INT NOT NULL,
+    `avatar_id` INT NOT NULL DEFAULT 1,
     PRIMARY KEY (`user_id`)
 ) ENGINE = InnoDB
 CHARACTER SET = utf8mb4

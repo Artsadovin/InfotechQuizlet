@@ -38,11 +38,7 @@ export const FormLogIn = () => {
                     if(refLogin.current! && refPassword.current!){
                         console.log(refLogin.current!.value)
                         console.log(refPassword.current!.value)
-<<<<<<< HEAD
-                        fetchPostRequest('/api/user', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
-=======
                         fetchPostRequest('api/login', {login: refLogin.current!.value, password: refPassword.current!.value}).then(
->>>>>>> Pasha
                             (response) => {
                                 if(!response.ok){
                                     throw new Error('error')

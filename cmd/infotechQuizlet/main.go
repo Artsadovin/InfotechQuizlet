@@ -28,24 +28,12 @@ func main() {
 	}
 
 	dbx := sqlx.NewDb(db, dbDriverName)
-	/*
-		row := db.QueryRow("SELECT * FROM user WHERE nickname=?", "oneeyeking")
-		var id int
-		var nickname string
-		var password string
-		var avatar_id int
-		err = row.Scan(&id, &nickname, &password, &avatar_id)
-		if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Println(nickname)
-	*/
-
 	mux := mux.NewRouter()
 
-	mux.HandleFunc("/login", index(dbx))
-	mux.HandleFunc("/api/sign_in", logination(dbx)).Methods(http.MethodPost) //user
-	mux.HandleFunc("/api/sign_up", registration(dbx)).Methods(http.MethodPost)
+	mux.HandleFunc("/login", loadLogScreen(dbx))
+	mux.HandleFunc("/signup", loadSignUpScreen(dbx))
+	mux.HandleFunc("/api/login", logination(dbx)).Methods(http.MethodPost) //user
+	mux.HandleFunc("/api/sign", registration(dbx)).Methods(http.MethodPost)
 	// Реализуем отдачу статики
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))

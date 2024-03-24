@@ -45,7 +45,7 @@ export const SignUpFrom = () => {
                         console.log(refLogin.current!.value)
                         console.log(refPassword.current!.value)
                         console.log(refConfPassword.current!.value)
-                        fetchPostRequest('api/sign', {login: refLogin.current!.value, password: refPassword.current!.value, confPassword: refConfPassword.current!.value}).then(
+                        fetchPostRequest('api/signup', {login: refLogin.current!.value, password: refPassword.current!.value, confPassword: refConfPassword.current!.value}).then(
                             (response) => {
                                 if(!response.ok){
                                     throw new Error('error')
